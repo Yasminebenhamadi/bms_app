@@ -27,12 +27,13 @@ dependencies:
   cloud_firestore: ^0.13.4+1
   firebase_auth: ^0.15.5+2
   #---------------Geolocation---------------
-  google_maps_flutter: any
-  location: any
+  google_maps_flutter: ^0.5.27+2
+  location: ^3.2.1
   #-------------Front--------------------
-  font_awesome_flutter: any
-  flutter_typeahead: any
-  provider: any
+  font_awesome_flutter: ^8.11.0
+  flutter_typeahead: ^1.8.8
+  provider: ^4.0.5+1
+  charts_flutter: ^0.9.0
 
 
 dev_dependencies:
