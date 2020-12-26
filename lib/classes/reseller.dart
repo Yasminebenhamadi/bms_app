@@ -29,11 +29,11 @@ class Reseller{
     _storename = resellerInfo['storename'];
     _presentationevaluate = resellerInfo['presentationevaluate'];
     _presentationevaluate = resellerInfo['clientevaluate'];
+    _activite = resellerInfo['activite'];
     if(resellerInfo.containsKey('location')){
       GeoPoint geoPoint = resellerInfo['location'];
       _location = LatLng(geoPoint.latitude, geoPoint.longitude);
     }
-
   }
   //*****************Methodes*****************//
   Map<String,dynamic> resellerToMap () => {
@@ -45,6 +45,7 @@ class Reseller{
     'storename':_storename,
     'presentationevaluate': _presentationevaluate,
     'clientevaluate': _clientevaluate,
+    'activite': _activite,
     'location': GeoPoint(_location.latitude, _location.longitude),
   };
 

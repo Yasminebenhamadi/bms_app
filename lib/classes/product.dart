@@ -2,8 +2,9 @@ class Product{
   String _code;
   String _nom;
   double _prix;
+  String info;
   //*****************Constructor*****************//
-  Product(this._nom,this._code,this._prix);
+  Product(this._nom,this._code,this._prix,this.info);
 
   //*****************Getters*****************//
   String get nom => _nom;
@@ -14,12 +15,14 @@ class Product{
     this._nom = productInfo['nom'];
     this._code = productInfo['code'];
     this._prix = productInfo['prix'];
+    info = productInfo['info'];
   }
   Map<String,dynamic> productToMap(){
     return {
       'nom' : this._nom,
       'code' : this._code,
       'prix' : this._prix,
+      'info' : info,
     };
   }
 
@@ -27,7 +30,7 @@ class Product{
 class BMSProduct extends Product {
  
   //*****************Constructor*****************//
-  BMSProduct(String nom,String code,double prix) : super(nom,code,prix);
+  BMSProduct(String nom,String code,double prix,String info) : super(nom,code,prix,info);
   Map<String,dynamic> productToMap(){
     Map<String,dynamic> map = super.productToMap();
     map.addAll({
@@ -39,7 +42,7 @@ class BMSProduct extends Product {
 
 class NotBMSProduct extends Product {
   //*****************Constructor*****************//
-  NotBMSProduct(String nom,String code,double prix) : super(nom,code,prix);
+  NotBMSProduct(String nom,String code,double prix,String info) : super(nom,code,prix,info);
   Map<String,dynamic> productToMap(){
     Map<String,dynamic> map = super.productToMap();
     map.addAll({

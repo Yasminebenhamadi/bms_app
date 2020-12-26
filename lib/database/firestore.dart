@@ -2,7 +2,6 @@ import 'package:bmsapp/classes/product.dart';
 import 'package:bmsapp/classes/reseller.dart';
 import 'package:bmsapp/classes/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../classes/product.dart';
 
 
@@ -28,7 +27,6 @@ class HandleFirestore{
   Future<void> addUserProfile (AppUser user) async{
     await _firestore.collection(_usersCollection).document(user.id).setData(user.appUserToMap());
   }
-  //TODO
   Future<void> updateUserProfile (AppUser user) async{
     await _firestore.collection(_usersCollection).document(user.id).setData(user.appUserToMap());
   }
@@ -51,9 +49,9 @@ class HandleFirestore{
     else
       throw CouldNotGetResellerException () ;
   }
-  //TODO
-  Future<void> updateResellersInfo (){
 
+  Future<void> updateResellersInfo (Reseller reseller) async {
+    await _firestore.collection(_resselersCollection).document(reseller.id).setData(reseller.resellerToMap());
   }
   Future<void> deleteReseller(String resellersID)async{
     await _firestore.collection(_resselersCollection).document(resellersID).delete();
