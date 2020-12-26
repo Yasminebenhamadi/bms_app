@@ -37,7 +37,6 @@ class Reseller{
   }
   //*****************Methodes*****************//
   Map<String,dynamic> resellerToMap () => {
-    'ID' : _id,
     'nom' : _nom ,
     'prenon' : _prenon,
     'phone': _phone,

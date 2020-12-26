@@ -73,21 +73,7 @@ class Home extends StatelessWidget {
                 ),
               ];
             },
-            body: new TabBarView(
-              children: [
-                Column(children: <Widget>[
-                  personDetailCard(null),
-                  personDetailCard2(),
-                  personDetailCard3(),
-                  personDetailCard4(),
-                  personDetailCard5(),
-                  personDetailCard6(),
-                ]),
-                Container(
-                  child: Mapp(),
-                )
-              ],
-            ),
+            body: body(context),
           ),
         ),
       ),
@@ -108,15 +94,8 @@ class Home extends StatelessWidget {
           }
           return TabBarView(
             children: [
-              Column(children: /*<Widget>[
-                personDetailCard(null),
-                personDetailCard2(),
-                personDetailCard3(),
-                personDetailCard4(),
-                personDetailCard5(),
-                personDetailCard6(),
-              ]*/
-              list
+              Column(
+                  children: list
               ),
               Container(
                 child: Mapp(),

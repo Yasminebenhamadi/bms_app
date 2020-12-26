@@ -56,6 +56,17 @@ class HandleFirestore{
   Future<void> deleteReseller(String resellersID)async{
     await _firestore.collection(_resselersCollection).document(resellersID).delete();
   }
+  Stream<QuerySnapshot> findReseller (String nom,String prenon){
+    return _firestore.collection(_resselersCollection)
+        .where('nom', isEqualTo: nom)
+        .where('prenon',isEqualTo:prenon)
+        .snapshots();
+  }
+  Stream<QuerySnapshot> resellersIn (String wilaya){
+    return _firestore.collection(_resselersCollection)
+        .where('wilaya', isEqualTo: wilaya)
+        .snapshots();
+  }
   //**************************************Products*************************************************/
   Future<void> addProduit(String resellersID, Product produit) async {
     await _firestore.collection(_resselersCollection).document(resellersID).collection(_productsCollection).document(produit.code).setData(produit.productToMap());
